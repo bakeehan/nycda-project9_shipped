@@ -29,14 +29,14 @@ class BoatsController < ApplicationController
     if @boat.update(boat_params)
       redirect_to "/boats"
     else
-      render "boats/#{:id}"
+      render "/boats/#{:id}"
     end
   end
 
   def destroy
     boat = Boat.find(params[:id])
     boat.destroy
-    redirect_to "boats"
+    redirect_to "/boats"
   end
 
   private
