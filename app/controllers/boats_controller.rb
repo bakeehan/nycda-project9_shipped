@@ -9,7 +9,7 @@ class BoatsController < ApplicationController
 
   def create
     @boat = Boat.new(boat_params)
-      if boat.save
+      if @boat.save
         redirect_to "/boats"
       else
         render "/boats/new"
@@ -17,11 +17,26 @@ class BoatsController < ApplicationController
   end
 
   def show
+      @boat = Boat.find(params[:id])
+  end
 
+  def edit
+    @boat = Boat.find(params[:id])
+  end
+
+  def update
+    @boat = Boat.find(params[:id])
+    if @boat.update(boat_params)
+      redirect_to "/boats"
+    else
+      render "boats/#{:id}"
+    end
   end
 
   def destroy
-
+    boat = Boat.find(params[:id])
+    boat.destroy
+    redirect_to "boats"
   end
 
   private

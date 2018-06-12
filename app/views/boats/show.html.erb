@@ -1,2 +1,10 @@
 <h1>Boats#show</h1>
 <p>Find me in app/views/boats/show.html.erb</p>
+
+<div>
+  <div><%= @boat.name%></div>
+  <div><%= @boat.containers%></div>
+  <div><%= @boat.location%></div>
+</div>
+
+<%= link_to "Delete", boat_path, method: :destroy %>
