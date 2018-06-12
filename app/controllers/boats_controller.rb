@@ -36,7 +36,7 @@ class BoatsController < ApplicationController
   def destroy
     boat = Boat.find(params[:id])
     boat.destroy
-    redirect_to "/boats"
+    redirect_to "/boats/"
   end
 
   private
