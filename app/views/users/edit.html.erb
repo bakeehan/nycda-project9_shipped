@@ -1,0 +1,12 @@
+<h2>Edit User:</h2>
+<div class='create-edit'>
+	<%= form_for @user do |f| %>
+</p>Edit Name: <%= f.text_field :name %></p>
+</p>	Edit Passsword: <%= f.text_field :password %></p>
+	<%= f.submit "update user" %>
+
+	<% end %>
+</div>
+<%= link_to "Delete User", user_path,
+							method: :delete,
+							data: {confirm: 'are you reallly really sure?'} %>

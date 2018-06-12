@@ -8,6 +8,21 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+<nav>
+  <li><a href='/'>Home</a></li>
+
+  <% if !logged_in? %>
+        <li><a href='/users/new'>Sign Up</a></li>
+         <li><a href='/signin'>Signin</a></li>
+      <% end %>
+
+
+      <% if logged_in? %>
+      Current User: <%= current_user.name %>
+        <li><%= link_to "Log out", "/logout", {method: "post"}%></li>
+      <% end %>
+</nav>
+
 
   <body>
     <%= yield %>
