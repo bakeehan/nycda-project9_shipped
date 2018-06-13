@@ -1,0 +1,8 @@
+<h2>Signing in</h2>
+
+<%= form_tag(signin_path) do %>
+name: <%= text_field_tag :name %>
+Password: <%= text_field_tag :password %>
+<%= submit_tag "Sign In" %>
+
+<% end %>

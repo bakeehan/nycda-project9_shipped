@@ -1,0 +1,10 @@
+<h2>Sign Up:</h2>
+<div class='create-edit'>
+	<%= form_for @user do |f| %>
+	<p> Name: <%= f.text_field :name %> </p>
+
+	<p> Password: <%= f.text_field :password %> </p>
+	<%= f.submit %>
+
+	<% end %>
+</div>
