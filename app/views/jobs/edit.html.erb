@@ -1,0 +1,20 @@
+<h3>edit job</h3
+
+<%= form_for @job do |f| %>
+	<b>job</b>
+	<%= f.text_field :title %><br>
+	<b>about this job</b>
+	<%= f.text_field :info %><br>
+	<b>select boat</b>
+	<%= f.select(:boat_id, options_for_select(@boats)) %>
+	<br>
+	<b>going from</b>
+	<%= f.text_field :origin %>
+	<b> to </b>
+	<%= f.text_field :destination %><br>
+	<b>number of shipping containers needed</b>
+	<%= f.text_field :containers %><br>
+	<b>total job price</b>
+	<%= f.text_field :cost %>
+	<%= f.submit "update" %>
+<% end %>
