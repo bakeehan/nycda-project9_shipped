@@ -7,10 +7,16 @@
 <h1>Boats#show</h1>
 <p>Find me in app/views/boats/show.html.erb</p>
 
+
+
 <div>
-  <div><%= @boat.name%></div>
-  <div><%= @boat.containers%></div>
-  <div><%= @boat.location%></div>
+  <%= image_tag @boat.image.url(:large) %>
+  <h4>Boat Name:</h4>
+  <p><%= @boat.name%></p>
+  <h4>Containers:</h4>
+     <p><%= @boat.containers%></p>
+  <h4>Boat Location:</h4>
+  <p><%= @boat.location%></p>
 </div>
 
 <%= link_to "Edit", edit_boat_path %>
