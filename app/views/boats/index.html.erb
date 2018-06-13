@@ -12,7 +12,11 @@
 <br>
 <% @boats.each do |b| %>
 <div><a href="/boats/<%= b.id %>"><%= b.name %></a></div>
+<% if b.image.file? %>
 <%= image_tag b.image.url(:medium) %>
+<% else %>
+<%= image_tag 'boatlogo.png', alt: '' %>
+<%end %>
 <div><%= b.containers %> containers</div>
 <div><%= b.location %></div>
 <br>
