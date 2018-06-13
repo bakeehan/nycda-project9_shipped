@@ -3,7 +3,6 @@ class Boat < ApplicationRecord
 	validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 	has_many :jobs
 	has_many :users, :through => :jobs
-
 	validates :name, uniqueness: true
 	validates :name, :containers, :location, presence: true
 

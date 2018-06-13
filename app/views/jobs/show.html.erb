@@ -1,0 +1,17 @@
+<h2><%= @job.title %></h2>
+
+<div>
+	<%= @job.origin %> to <%= @job.destination %>
+	<br>
+	created by <a href="/users/<%= @user.id %>"><%= @user.name %></a> for <a href="/boats/<%= @boat.id %>"><%= @boat.name %></a>
+	<hr>
+	<%= link_to "delete this job", job_path, method: :delete %>
+</div>
+
+<div>
+	<%= @job.info %>
+</div>
+
+<div>
+	requires <%= @job.containers %> containers for a total price of $<%= @job.cost %>
+</div>

@@ -1,0 +1,9 @@
+<div id="jobswrapper">
+	<% @jobs.each do |job| %>
+		<div>
+			<%= job.title %><br>
+			<%= job.origin %> to <%= job.destination %>
+			<a href="/jobs/<%= job.id %>">more info</a>
+		</div>
+	<% end %>
+</div>
