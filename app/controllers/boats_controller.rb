@@ -28,6 +28,7 @@ class BoatsController < ApplicationController
   def update
     @boat = Boat.find(params[:id])
     if @boat.update(boat_params)
+      flash[:notice] = "Boat updated successfully."
       redirect_to "/boats"
     else
       render "/boats/#{:id}"
@@ -37,6 +38,7 @@ class BoatsController < ApplicationController
   def destroy
     boat = Boat.find(params[:id])
     boat.destroy
+    flash[:notice] = "Boat was deleted successfully."
     redirect_to "/boats/"
   end
 
@@ -46,5 +48,3 @@ class BoatsController < ApplicationController
     params.require(:boat).permit(:name, :containers, :location)
 end
 end
-
-# flash[:notice] = "Boat created successfully."
