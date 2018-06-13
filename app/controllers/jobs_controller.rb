@@ -17,8 +17,9 @@ class JobsController < ApplicationController
 
 	def create
 		@job = Job.new(job_params)
-		@user = session[:user_id]
-		if @job.save
+		@job.user_id = current_user.id
+		@job.boat_id = params[:boat_id]
+		if @job.save!
 			redirect_to "/jobs/"
 		else
 			render "/jobs/new"
@@ -33,12 +34,15 @@ class JobsController < ApplicationController
 	end
 
 	def edit
+		@boats = Boat.all.map{ |boat| [ boat.name, boat.id ] }
 		@job = Job.find(params[:id])
 	end
 
 	def update
-		job = Job.find(params[:id])
-		if job.update(job_params)
+		@job = Job.find(params[:id])
+		@job.user_id = current_user.id
+		job_params[:boat_id] = params[:boat_id]
+		if @job.update!(job_params)
 			flash[:message] = "job updated!"
 			redirect_to "/jobs/"
 		else

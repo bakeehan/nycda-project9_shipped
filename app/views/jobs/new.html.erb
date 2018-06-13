@@ -6,9 +6,6 @@
 	<b>select boat</b>
 	<%= select_tag(:boat_id, options_from_collection_for_select(Boat.all, :id, :name), include_blank: "Select Boat") %>
 	<br>
-	<b>select user</b>
-	<%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :name), include_blank: "Select user") %>
-	<br>
 	<b>going from</b>
 	<%= f.text_field :origin %>
 	<b> to </b>
@@ -17,5 +14,6 @@
 	<%= f.number_field :containers %><br>
 	<b>total job price</b>
 	<%= f.number_field :cost %>
-	<%= f.submit "update" %>
+	<%= hidden_field_tag :user_id, current_user.id %>
+	<%= f.submit "create" %>
 <% end %>
