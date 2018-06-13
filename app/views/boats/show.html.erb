@@ -10,7 +10,11 @@
 
 
 <div>
+  <% if @boat.image.file? %>
   <%= image_tag @boat.image.url(:large) %>
+  <% else %>
+  <%= image_tag 'boatlogo.png', alt: '' %>
+  <% end %>
   <h4>Boat Name:</h4>
   <p><%= @boat.name%></p>
   <h4>Containers:</h4>
