@@ -15,21 +15,19 @@
         <li><a href='/users/new'>Sign Up</a></li>
          <li><a href='/signin'>Sign In</a></li>
         <% else %>
-    <div class="userTag">Current User: <%= current_user.name %>
-        <%= link_to "Edit User", edit_user_path(:id => current_user.id) %>
-    </div>
-        <li><%= link_to "Log out", logout_path %></li>
+        <li class="userTag">Current User: <%= current_user.name %></li>
+        <li><%= link_to "Edit User", edit_user_path(:id => current_user.id) %></li>
+        <li><%= link_to "Log out", logout_path, :method => "sessions#destroy" %></li>
       <% end %>
 </nav>
+<body>
 
+  <% if !flash[:notice].blank? %>
+  <div class="boatNotice">
+    <%= flash[:notice] %>
+  </div>
+  <% end %>
 
-  <body>
     <%= yield %>
   </body>
 </html>
-
-<!-- <% if !flash[:notice].blank? %>
-<div class="boatNotice">
-  <%= flash[:notice] %>
-</div>
-<% end %> -->
