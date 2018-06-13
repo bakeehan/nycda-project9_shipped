@@ -1,0 +1,9 @@
+<h1>Boats#new</h1>
+<p>Find me in app/views/boats/new.html.erb</p>
+
+<%= form_for @boat do |f| %>
+Name: <%= f.text_field :name %>
+Containers: <%= f.text_field :containers %>
+Location: <%= f.text_field :location %>
+<%= f.submit %>
+<% end %>
