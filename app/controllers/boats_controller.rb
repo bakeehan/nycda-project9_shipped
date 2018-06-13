@@ -10,6 +10,7 @@ class BoatsController < ApplicationController
   def create
     @boat = Boat.new(boat_params)
       if @boat.save
+        flash[:notice] = "Boat created successfully."
         redirect_to "/boats"
       else
         render "/boats/new"
@@ -45,3 +46,5 @@ class BoatsController < ApplicationController
     params.require(:boat).permit(:name, :containers, :location)
 end
 end
+
+# flash[:notice] = "Boat created successfully."
