@@ -1,0 +1,19 @@
+<%= form_for @job do |f| %>
+	<b>job</b>
+	<%= f.text_field :title %><br>
+	<b>about this job</b>
+	<%= f.text_field :info %><br>
+	<b>select boat</b>
+	<%= select_tag(:boat_id, options_from_collection_for_select(Boat.all, :id, :name), include_blank: "Select Boat") %>
+	<br>
+	<b>going from</b>
+	<%= f.text_field :origin %>
+	<b> to </b>
+	<%= f.text_field :destination %><br>
+	<b>number of shipping containers needed</b>
+	<%= f.number_field :containers %><br>
+	<b>total job price</b>
+	<%= f.number_field :cost %>
+	<%= hidden_field_tag :user_id, current_user.id %>
+	<%= f.submit "create" %>
+<% end %>
