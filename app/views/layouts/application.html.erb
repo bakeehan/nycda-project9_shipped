@@ -15,9 +15,10 @@
         <li><a href='/users/new'>Sign Up</a></li>
          <li><a href='/signin'>Sign In</a></li>
         <% else %>
-      Current User: <%= current_user.name %>
-        <li><%= link_to "Log out", logout_path %></li>
+    <div class="userTag">Current User: <%= current_user.name %>
         <%= link_to "Edit User", edit_user_path(:id => current_user.id) %>
+    </div>
+        <li><%= link_to "Log out", logout_path %></li>
       <% end %>
 </nav>
 
