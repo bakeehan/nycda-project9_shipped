@@ -4,15 +4,18 @@
 	<b>about this job</b>
 	<%= f.text_field :info %><br>
 	<b>select boat</b>
-	<%= f.select(:boat_id, options_for_select(@boats)) %>
+	<%= select_tag(:boat_id, options_from_collection_for_select(Boat.all, :id, :name), include_blank: "Select Boat") %>
+	<br>
+	<b>select user</b>
+	<%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :name), include_blank: "Select user") %>
 	<br>
 	<b>going from</b>
 	<%= f.text_field :origin %>
 	<b> to </b>
 	<%= f.text_field :destination %><br>
 	<b>number of shipping containers needed</b>
-	<%= f.text_field :containers %><br>
+	<%= f.number_field :containers %><br>
 	<b>total job price</b>
-	<%= f.text_field :cost %>
-	<%= f.submit "create" %>
+	<%= f.number_field :cost %>
+	<%= f.submit "update" %>
 <% end %>

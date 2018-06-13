@@ -11,15 +11,15 @@ class JobsController < ApplicationController
 	end
 
 	def new
-		@boats = Boats.all.map{ |boat| [ boat.name, boat.id ] }
+		@boats = Boat.all.map{ |boat| [ boat.name, boat.id ] }
 		@job = Job.new
 	end
 
 	def create
-		job = Job.new(job_params)
-		job.user_id = current_user.id
-		if job.save
-			redirect_to "/jobs"
+		@job = Job.new(job_params)
+		@user = session[:user_id]
+		if @job.save
+			redirect_to "/jobs/"
 		else
 			render "/jobs/new"
 		end
@@ -48,7 +48,7 @@ class JobsController < ApplicationController
 
 	private
 	def job_params
-		params.require(:job).permit(:title,:info, :origin, :destination, :cost, :contaiers, :boat_id, :user_id)
+		params.require(:job).permit(:title,:info, :origin, :destination, :cost, :containers, :boat_id, :user_id)
 	end
 
 end
