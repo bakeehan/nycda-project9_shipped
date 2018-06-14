@@ -1,3 +1,14 @@
 @import "layout";
 @import "boat";
- 
+
+@import url('https://fonts.googleapis.com/css?family=Bevan|Open+Sans');
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+#mainall a {
+	text-decoration: none;
+	color: #731224;
+	font-weight:bold;
+}

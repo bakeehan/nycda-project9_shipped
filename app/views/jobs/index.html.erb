@@ -1,9 +1,18 @@
+<h2>All jobs on record</h2>
 <div id="jobswrapper">
 	<% @jobs.each do |job| %>
-		<div>
-			<%= job.title %><br>
-			<%= job.origin %> to <%= job.destination %>
-			<a href="/jobs/<%= job.id %>">more info</a>
+		<div class="jobbox">
+			<h3><%= job.title %></h3>
+			<i><b>from</b> <%= job.origin %> <b>to</b> <%= job.destination %></i>
+			<div class="jobdets">
+				<% if Boat.find(job.boat_id).image.file? %>
+					<%= image_tag Boat.find(job.boat_id).image.url(:medium) %>
+				<% else %>
+					<%= image_tag 'boatlogo.png', alt: '' %>
+				<%end %>
+				<%= job.info %>
+				<a href="/jobs/<%= job.id %>">more info</a>
+			</div>
 		</div>
 	<% end %>
 </div>
