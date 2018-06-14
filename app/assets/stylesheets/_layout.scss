@@ -4,6 +4,7 @@ nav{
   padding: 0;
   overflow: hidden;
   background-color: maroon;
+  width: 80%;
 }
 
 li{
@@ -36,4 +37,39 @@ li a:hover:not(.active){
   height: 30px;
   border: 4px double black;
   padding-top: 8px;
+}
+
+.btn{
+  background-color:inherit;
+  // border: none;
+  cursor: pointer;
+}
+
+.dropdown{
+float: left;
+overflow: hidden;
+}
+
+.dropdown-content{
+  display: none;
+  position: absolute;
+  background-color: #d0c9cb;
+  min-width: 260px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: maroon;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }

@@ -18,7 +18,16 @@
         <li class="userTag">Current User: <%= current_user.name %></li>
         <li><%= link_to "Edit User", edit_user_path(:id => current_user.id) %></li>
         <li><%= link_to "Log out", logout_path, :method => "sessions#destroy" %></li>
+
       <% end %>
+      <div class="dropdown">
+        <li class="btn"><a href='/'>Other links</a></li>
+            <div class="dropdown-content">
+              <a href ="">Link 1</a>
+              <a href ="">Link 2</a>
+              <a href ="">Link 3</a>
+            </div>
+      </div>
 </nav>
 <body>
 
