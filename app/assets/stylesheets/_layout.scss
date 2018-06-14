@@ -1,10 +1,29 @@
+.logoTitle{
+width:200px;
+border: 3px double maroon;
+padding: 0;
+text-align: center;
+}
+
+.topParts{
+width:924px;
+border: 3px solid black;
+background-color: black;
+position: absolute;
+left: 214px;
+top: 8px;
+text-align: center;
+text-align: left;
+color: white;
+}
+
+
 nav{
   list-style-type: none;
-  margin: 0;
+  margin-top: 1px;
   padding: 0;
   overflow: hidden;
   background-color: maroon;
-  width: 80%;
 }
 
 li{
@@ -27,16 +46,16 @@ li a:hover:not(.active){
 .userTag{
   position: absolute;
   left: 853px;
-  top: 8px;
+  top: 86px;
   text-align: center;
   color: white;
   font-size: 20px;
   font-weight: bold;
   word-spacing: 2px;
   width: 280px;
-  height: 30px;
+  height: 28px;
   border: 4px double black;
-  padding-top: 8px;
+  padding-top: 7px;
 }
 
 .btn{
