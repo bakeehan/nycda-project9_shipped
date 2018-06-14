@@ -1,20 +1,29 @@
-// .boatIndex, .boatNew, .boatShow, .boatEdit {
-//   margin-left: 30px;
-// }
+.boat-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
 
-// a:link{
-//   text-decoration: none;
-// }
-//
-// a:visited{
-//   text-decoration: none;
-// }
-//
-// a:hover{
-//   text-decoration: underline;
-// }
-//
-// a:active{
-//
-//   text-decoration: underline;
-// }
+.boat-childeren{
+   flex-basis: 40em;
+   border-radius: 10px;
+   align-self:  center;
+   border: 3px solid #4D6E82;
+}
+
+.boat-images{
+  text-align: center;
+}
+
+.boatName {
+  color: #731224;
+  text-align: center;
+}
+.boatName a:visited {
+  color: #731224;
+}
+
+a:link{
+  color: #731224;
+}

@@ -1,3 +1,4 @@
+
 nav{
   list-style-type: none;
   margin: 0;
@@ -19,10 +20,6 @@ li a{
   text-decoration: none;
 }
 
-li a:hover:not(.active){
-  background-color: #d0c9cb;
-}
-
 .userTag{
   position: absolute;
   left: 853px;
@@ -37,3 +34,20 @@ li a:hover:not(.active){
   border: 4px double black;
   padding-top: 8px;
 }
+
+#copywrite{
+  position: relative;
+  top: 100px;
+}
+
+footer{
+    width: 100%;
+    height: 100px;
+    background-image: url("/assets/waves-312449_12803.png");
+  }​
+
+
+
+  li a:hover:not(.active){
+    background-color: #d0c9cb;
+  }
