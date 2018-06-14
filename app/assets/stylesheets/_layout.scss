@@ -90,12 +90,14 @@ overflow: hidden;
 
 #copywrite{
   position: relative;
-  top: 100px;
+  top: 50px;
 }
 
 footer{
     width: 100%;
     height: 100px;
+    position: fixed;
+    bottom: 0px;
     background-image: url("/assets/waves-312449_12803.png");
   }​
 
