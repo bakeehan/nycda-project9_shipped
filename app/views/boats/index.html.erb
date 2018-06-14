@@ -11,15 +11,24 @@
 <%= link_to "New Boat", new_boat_path %>
 <br>
 <br>
+
+
+<div class="boat-container">
 <% @boats.each do |b| %>
-<div class="boatName"><a href="/boats/<%= b.id %>" target="_blank"><%= b.name %></a></div>
-<% if b.image.file? %>
+<div class="boat-childeren">
+<div class="boatName"><h1><a href="/boats/<%= b.id %>" target="_blank"><%= b.name %></a></h1></div>
+ <div class="boat-images"><% if b.image.file? %>
 <%= image_tag b.image.url(:medium) %>
 <% else %>
 <%= image_tag 'boatlogo.png', alt: '' %>
-<%end %>
+<% end %>
+</div>
+<hr>
+<strong>Info:</strong>
 <div><%= b.containers %> containers</div>
 <div><%= b.location %></div>
 <br>
+</div>
 <% end %>
+</div>
 </div>
