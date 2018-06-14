@@ -1,3 +1,152 @@
 // Place all the styles related to the jobs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#jobswrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding-bottom: 60px;
+}
+
+.jobbox {
+	width: 150px;
+	height:150px;
+	border: 2px solid #4D6E82;
+	border-radius: 5px;
+	margin: 15px 10px;
+	padding: 5px 10px 10px;
+	position: relative;
+	overflow: hidden;
+	font-size: .7em;
+}
+
+.jobbox i {
+	line-height: 100%;
+	display:block;
+	padding: 3px 0 4px 15px;
+	margin-left: -15px;
+	font-size: .95em;
+	border-bottom: 2px dotted #ADC6D0;
+}
+
+.jobbox i b {
+	font-variant: small-caps;
+	font-style:normal;
+	font-size: 1.1em;
+	color: #4D6E82;
+	margin-left:2px;
+}
+
+.jobdets {
+	padding-top: 5px;
+}
+
+.jobdets img {
+	max-width:50%;
+	max-height:70px;
+	float:right;
+}
+
+.jobdets a {
+	border-top: 1px dotted #ADC6D0;
+	margin:5px 2px 0 0;
+	display:inline-block;
+	position: absolute;
+	background-color:white;
+	bottom:0;
+	left: 0;
+	width:100%;
+	padding: 2px 0 3px 10px;
+}
+
+h2 {
+	padding: 0;
+	margin: 15px 0 0;
+}
+
+h3 {
+	width: 160px;
+	margin: 0;
+	padding:0 0 3px 0;
+	border-bottom: 3px dotted #ADC6D0;
+}
+
+#jobwrapper {
+	display: grid;
+	grid-template-areas: 'title title user'
+	'title title boat'
+	'travel travel pic'
+	'features features pic'
+	'dets dets pic';
+	grid-column-gap: 5px;
+	grid-template-columns: 2fr 3fr 4fr;
+	grid-template-rows: auto auto 25px 25px auto auto;
+	margin: 10px auto 60px;
+	padding: 0 30px;
+	max-width:800px;
+	min-width:530px;
+}
+
+#jobwrapper h2 {
+	grid-area:title;
+	margin:0;
+	font-size: 1.75em;
+}
+
+#jobwrapper h2, .sjobboat {
+	padding-bottom: 5px;
+	border-bottom: 5px dotted #ADC6D0;
+	margin-bottom: 15px;
+}
+
+.sjobuser {
+	grid-area:user;
+}
+
+.sjobtravel {
+	grid-area:travel;
+	min-width:300px;
+}
+
+.sjobfeatures {
+	grid-area:features;
+}
+
+.sjobdets {
+	grid-area:dets;
+	min-height: 200px;
+	margin-top:5px;
+	border: 2px solid #4D6E82;
+	border-radius: 5px;
+	position:relative;
+}
+
+.sjobinfo {
+	min-height:100px;
+	padding:10px;
+	margin-bottom:35px;
+}
+
+.sjobboat {
+	grid-area:boat;
+}
+
+.sjobpic {
+	grid-area:pic;
+	margin-left: 10px;
+}
+
+.sjobpic img {
+	max-height:300px;
+}
+
+.sjobactions {
+	display:flex;
+	flex-wrap:wrap;
+	padding: 5px 0;
+	width:100%;
+	position:absolute;
+	bottom:2px;
+	border-top: 2px dotted #4D6E82;
+}

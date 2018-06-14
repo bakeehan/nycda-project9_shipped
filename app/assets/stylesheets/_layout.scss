@@ -17,7 +17,6 @@ text-align: left;
 color: white;
 }
 
-
 nav{
   list-style-type: none;
   margin-top: 1px;
@@ -37,10 +36,6 @@ li a{
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-}
-
-li a:hover:not(.active){
-  background-color: #d0c9cb;
 }
 
 .userTag{
@@ -92,3 +87,20 @@ overflow: hidden;
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+#copywrite{
+  position: relative;
+  top: 100px;
+}
+
+footer{
+    width: 100%;
+    height: 100px;
+    background-image: url("/assets/waves-312449_12803.png");
+  }​
+
+
+
+  li a:hover:not(.active){
+    background-color: #d0c9cb;
+  }
