@@ -42,8 +42,9 @@ class JobsController < ApplicationController
 		@job = Job.find(params[:id])
 		@job.user_id = current_user.id
 		job_params[:boat_id] = params[:boat_id]
+		@job.boat_id = params[:boat_id]
 		if @job.update!(job_params)
-			flash[:message] = "job updated!"
+			@job.boat_id = params[:boat_id]
 			redirect_to "/jobs/"
 		else
 			render edit_job_path
