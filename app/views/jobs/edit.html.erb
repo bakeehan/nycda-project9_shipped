@@ -1,19 +1,21 @@
+<h2>Edit "<%= @job.title %>"</h2>
 <%= form_for @job do |f| %>
-	<b>job</b>
+	<b>name</b>
 	<%= f.text_field :title %><br>
 	<b>about this job</b>
-	<%= f.text_field :info %><br>
+	<%= f.text_field :info %>
+	<p>
 	<b>select boat</b>
 	<%= select_tag(:boat_id, options_from_collection_for_select(Boat.all, :id, :name), include_blank: "Select Boat") %>
 	<br>
+	<b>number of shipping containers needed</b>
+	<%= f.number_field :containers %><br>
 	<b>going from</b>
 	<%= f.text_field :origin %>
 	<b> to </b>
 	<%= f.text_field :destination %><br>
-	<b>number of shipping containers needed</b>
-	<%= f.number_field :containers %><br>
 	<b>total job price</b>
 	<%= f.number_field :cost %>
 	<%= hidden_field_tag :user_id, current_user.id %>
-	<%= f.submit "update" %>
+	<br><%= f.submit "update" %>
 <% end %>
