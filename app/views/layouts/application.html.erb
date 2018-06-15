@@ -27,9 +27,14 @@
       <div class="dropdown">
         <li class="btn"><a href='/'>Other links</a></li>
             <div class="dropdown-content">
-              <a href ="">Link 1</a>
-              <a href ="">Link 2</a>
-              <a href ="">Link 3</a>
+              <a href ="/boats">Show Boats</a>
+              <a href ="/boats/new">New Boat</a>
+              <a href ="/users">Show Users</a>
+              <a href ="/users/new">Create a User</a>
+              <a href ="/jobs">Show Jobs</a>
+            <% if logged_in? %>
+              <a href ="/jobs/new">Post New Job</a>
+            <% end %>
             </div>
       </div>
 </nav>
@@ -40,7 +45,7 @@
     <%= flash[:notice] %>
   </div>
   <% end %>
-  
+
     <div id="mainall"><%= yield %></div>
     <footer>
       <p id="copywrite">Copyright (c) 2018 Copyright Holder All Rights Reserved.</p>
