@@ -11,19 +11,29 @@
 
 
 <div id="boats-showpage" >
-  <% if @boat.image.file? %>
+
+<div class="boatImage">
+<% if @boat.image.file? %>
   <%= image_tag @boat.image.url(:large) %>
   <% else %>
   <%= image_tag 'boatlogo.png', alt: '' %>
   <% end %>
+</div>
+<div class="boatName">
   <h4>Boat Name:</h4>
   <p><%= @boat.name%></p>
-  <h4>Containers:</h4>
+</div>
+<div class="boatName">
+    <h4>Containers:</h4>
      <p><%= @boat.containers%></p>
+</div>
+<div class="boatName">
   <h4>Boat Location:</h4>
   <p><%= @boat.location%></p>
 </div>
+</div>
 
 <%= link_to "Edit", edit_boat_path %>
+|
 <%= link_to "Delete", boat_path, method: :delete %>
 </div>
